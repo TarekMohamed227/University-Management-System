@@ -1,0 +1,33 @@
+﻿@model Department
+@{
+    Layout = null;
+    SelectList Courses = new SelectList(ViewBag.Courses, "Id", "Name");
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body class="container">
+    <form method="post">
+
+        <label asp-for="Deptid">Department ID</label>
+        <br />
+        <input asp-for="Deptid" />
+        <br />
+        <label asp-for="Deptname">Department name</label>
+        <br />
+        <input asp-for="Deptname" />
+        <br />
+        <label>Courses</label>
+        <br />
+        <select multiple asp-items="Courses" name="Coursesindept"></select>
+        <br />
+        <input type="submit" value="add" class="btn btn-info" />
+    </form>
+</body>
+</html>

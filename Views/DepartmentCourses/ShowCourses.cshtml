@@ -1,0 +1,41 @@
+﻿@model Department
+@{
+    Layout = null;
+    int i = 0;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ShowCourses</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body class="container">
+    <table class="table table-light table-hover mt-5 align-items-center">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Course ID</th>
+                <th>Course name</th>
+                <th>Duration</th>
+                <th>Operation</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model.Courses)
+            {
+                <tr>
+                    <td>@(i++)</td>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.duration</td>
+                    <td>
+                        <a asp-action="AddDegree" asp-controller="DepartmentCourses" asp-route-deptid="@Model.Deptid" asp-route-corsid="@item.Id" class="btn btn-warning">Add Degree</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

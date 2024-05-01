@@ -1,0 +1,21 @@
+﻿@{
+    Layout = null;
+    SelectList deptlst = new SelectList(ViewBag.deptlist, "Deptid", "Deptname");
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Edit</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body class="container">
+    <form method="post" enctype="multipart/form-data">
+        <partial name="CreateEdit" />
+        <br />
+        <input type="submit" value="Edit" class="btn btn-info" />
+    </form>
+</body>
+</html>

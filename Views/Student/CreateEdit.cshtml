@@ -1,0 +1,23 @@
+﻿@model Student
+@{
+    SelectList deptlst = new SelectList(ViewBag.deptlist, "Deptid", "Deptname");
+}
+<label asp-for="Name"></label>
+<input asp-for="Name" class="form-control" />
+<span asp-validation-for="Name" class="text-danger"></span>
+<br />
+<label asp-for="age"></label>
+<input asp-for="age" class="form-control" />
+<span asp-validation-for="age" class="text-danger"></span>
+
+<br />
+<label asp-for="Dptid"></label>
+<select asp-for="Dptid" asp-items="deptlst" class="form-control"></select>
+<br />
+<label asp-for="stdimg">Student image</label>
+<br />
+<input type="file" name="stdimg" />
+<br />
+
+
+

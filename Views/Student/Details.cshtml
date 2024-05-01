@@ -1,0 +1,32 @@
+﻿@model Student
+@{
+    List<StudentCourse> studentCourses = ViewBag.studentcourses;
+}
+<div class="row align-items-center" >
+    <div class="col-md-6">
+        @if (Model.stdimg != null && Model.stdimg != "")
+        {
+            <img src="~/Images/@Html.DisplayFor(Model=>Model.stdimg)" width="200" height="300">
+        }
+        else
+        {
+            <div>Please upload an image</div>
+        }
+    </div>
+
+    <div class="col-md-6">
+        <h3>Student Name : @Model.Name </h3>
+        <h3>Department : @Model.department.Deptname</h3>
+        <p>Student age : @Model.age</p>
+        <p>Student ID :@Model.Id</p>
+        @foreach (var item in studentCourses)
+        {
+            <p>@item.Course.Name degree :  @item.degree</p>
+        }
+
+    </div>
+</div>
+
+
+        
+
